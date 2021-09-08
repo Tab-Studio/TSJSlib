@@ -16,11 +16,12 @@ class color{
             'black':'#666666', 
             random:function(){
                 let colors = new color;
-                let reC = random(0, Object.keys(colors.brite).length-1);
+                let reC = random(0, Object.keys(colors.brite).length-2);
                 let i = 0
                 for(let c in colors.brite){
                     if(i == reC){
                         reC = colors.brite[c];
+                        console.log(c)
                         break;
                     }
                     i++;
