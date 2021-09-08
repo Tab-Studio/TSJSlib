@@ -21,7 +21,6 @@ class color{
                 for(let c in colors.brite){
                     if(i == reC){
                         reC = colors.brite[c];
-                        console.log(c)
                         break;
                     }
                     i++;
