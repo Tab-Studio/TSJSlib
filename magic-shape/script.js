@@ -5,7 +5,8 @@
 // https://tab-studio.github.io/TSJSlib/magic-shape/script.js
 const cvs = $('#cvs'), 
 ctx = cvs.getContext('2d'), 
-msc = [color.brite.red, color.brite.green], 
+// msc = [color.brite.red, color.brite.green], 
+msc = [color.brite.random(), color.brite.random()], 
 // msc = [color.brite.white, color.brite.gray], 
 ms = [];
 cvs.width = 100*vw();
