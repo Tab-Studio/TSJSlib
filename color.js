@@ -1,4 +1,4 @@
-// include <Tab-Studio/TSJSlib/color.js>
+// include <Tab-Studio/TSJSlib/basic.js>
 
 // https://tab-studio.github.io/TSJSlib/color.js
 class color{
