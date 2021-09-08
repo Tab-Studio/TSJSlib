@@ -1,3 +1,4 @@
+// https://tab-studio.github.io/TSJSlib/basic.js
 function $(e, f = document){return(f.querySelector(e));}
 function $$(e, f = document){return(f.querySelectorAll(e));}
 function vw(){return(window.innerWidth/100);}

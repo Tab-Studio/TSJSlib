@@ -1,4 +1,6 @@
 // include <Tab-Studio/TSJSlib/basic.js>
+
+// https://tab-studio.github.io/TSJSlib/magic-shape.js
 class magicDot{
     constructor(settings = {}){
         this.x = settings['x'] !== undefined ? settings['x'] : 0;

@@ -1,3 +1,4 @@
+// https://tab-studio.github.io/TSJSlib/color.js
 class color{
     constructor(){
         this.brite = {
