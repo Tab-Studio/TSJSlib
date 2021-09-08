@@ -9,6 +9,9 @@ ctx = cvs.getContext('2d'),
 msc = [color.brite.random(), color.brite.random()], 
 // msc = [color.brite.white, color.brite.gray], 
 ms = [];
+while(msc[0] == msc[1]){
+    msc[1] = color.brite.random();
+}
 cvs.width = 100*vw();
 cvs.height = 100*vh();
 ctx.fillStyle = '#000000';
