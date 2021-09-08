@@ -1,3 +1,5 @@
+// include <Tab-Studio/TSJSlib/color.js>
+
 // https://tab-studio.github.io/TSJSlib/color.js
 class color{
     constructor(){
@@ -11,7 +13,20 @@ class color{
             'purple':'#cb77da', 
             'white':'#eeeeee', 
             'gray':'#aaaaaa', 
-            'black':'#666666'
+            'black':'#666666', 
+            random:function(){
+                let colors = new color;
+                let reC = random(0, 11);
+                let i = 0
+                for(let c in colors.brite){
+                    if(i == reC){
+                        reC = colors.brite[c];
+                        break;
+                    }
+                    i++;
+                }
+                return(reC);
+            }
         }
         this.white = '#ffffff'
     }
