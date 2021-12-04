@@ -1,5 +1,5 @@
 // src https://tab-studio.github.io/TSJSlib/basic.js
-// version 2.0.2
+// version 2.0.3
 function $(e, f = document){return(f.querySelector(e));}
 function $$(e, f = document){return(f.querySelectorAll(e));}
 function vw(){return(window.innerWidth/100);}
@@ -66,6 +66,7 @@ function setCookie(key = undefined, value = undefined, expire = undefined, path 
         if(secure !== undefined){
             cookie += `; secure`;
         }
+        document.cookie = cookie;
     }
 }
 function sendXmlhttp(name = '', value = '', responseFunction = t => {console.log(t);}, type = 'get'){
