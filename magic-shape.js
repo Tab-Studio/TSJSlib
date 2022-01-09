@@ -39,6 +39,7 @@ class magicShape{
     }
     update(){
         this.ds.forEach(d => d.update());
+        ctx.lineJoin = 'round';
         ctx.beginPath();
         ctx.moveTo(this.ds[0].x*vw(), this.ds[0].y*vh());
         for(let i = 1; i < this.ds.length; i++){
