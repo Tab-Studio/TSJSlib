@@ -1,7 +1,12 @@
-// src https://tab-studio.github.io/TSJSlib/basic.js
-// version 2.0.3
+/*
+ * 2023 © MaoHuPi
+ *
+ * src https://tab-studio.github.io/TSJSlib/basic.js
+ * version 2.0.3
+ */
 function $(e, f = document){return(f.querySelector(e));}
 function $$(e, f = document){return(f.querySelectorAll(e));}
+function $e(name){return(document.createElement(name));}
 function vw(){return(window.innerWidth/100);}
 function vh(){return(window.innerHeight/100);}
 function random(min, max){return(Math.floor(Math.random()*(max+1-min))+min);}
@@ -104,4 +109,16 @@ function radians(deg){
 }
 function deg(radians){
     return(radians / (Math.PI / 180));
+}
+function creatDataBuffer(valueFunc){
+    let buffer = {};
+    function func(key){
+        let value = buffer[key];
+        if(!value){
+            value = valueFunc(key);
+            buffer[key] = value;
+        }
+        return(value);
+    }
+    return(func);
 }
