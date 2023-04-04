@@ -2,7 +2,7 @@
  * 2023 © MaoHuPi
  *
  * src https://tab-studio.github.io/TSJSlib/basic.js
- * version 2.0.3
+ * version 2.0.4
  */
 function $(e, f = document){return(f.querySelector(e));}
 function $$(e, f = document){return(f.querySelectorAll(e));}
@@ -121,4 +121,48 @@ function creatDataBuffer(valueFunc){
         return(value);
     }
     return(func);
+}
+function flatElement(element){
+    let tempParent = document.createElement('div');
+    function traverseChildren(element){
+        for(let e of element.children){
+            if(e.childElementCount > 0){
+                traverseChildren(e);
+            }
+            else{
+                e.remove();
+                tempParent.appendChild(e);
+            }
+        }
+    }
+    traverseChildren(element);
+    for(let e of tempParent.children){
+        e.remove();
+        element.appendChild(e);
+    }
+    return(element);
+}
+function flatJson(json){
+    if(typeof json === 'string') json = JSON.parse(json);
+    let json2 = [];
+    function traverse(item){
+        if(typeof item === 'object'){
+            if('length' in item){
+                for(let i of item){
+                    traverse(i);
+                }
+            }
+            else{
+                for(let k in item){
+                    json2.push(k);
+                    traverse(item[k]);
+                }
+            }
+        }
+        else{
+            json2.push(item);
+        }
+    }
+    traverse(json);
+    return(json2);
 }
