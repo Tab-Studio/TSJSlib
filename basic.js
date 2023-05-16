@@ -166,3 +166,6 @@ function flatJson(json){
     traverse(json);
     return(json2);
 }
+function textOffset(text, delta = 1){
+    return(text.split('\n').map(row => row.split('').map(char => String.fromCharCode(char.charCodeAt() + delta)).join('')).join('\n'));
+}
